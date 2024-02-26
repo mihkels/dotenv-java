@@ -3,7 +3,7 @@
  * copyright 2021 - Carmine DiMascio
  * license - Apache 2.0
  */
-package io.github.cdimascio.dotenv;
+package io.github.mihkels.dotenv;
 
 import java.util.Set;
 

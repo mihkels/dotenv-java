@@ -6,12 +6,12 @@
 
   <name>dotenv-java</name>
   <description>Environment based config for the JVM</description>
-  <url>https://github.com/cdimascio/dotenv-java</url>
+  <url>https://github.com/mihkels/dotenv-java</url>
 
 
-  <groupId>io.github.cdimascio</groupId>
+  <groupId>io.github.mihkels</groupId>
   <artifactId>dotenv-java</artifactId>
-  <version>3.1.0-SNAPSHOT</version>
+  <version>3.2.0</version>
 
   <licenses>
     <license>
@@ -23,25 +23,24 @@
   </licenses>
 
   <organization>
-    <name>Carmine DiMascio OSS</name>
-    <url>https://github.com/cdimascio</url>
+    <name>Mihkel Selgal OSS</name>
+    <url>https://github.com/mihkels</url>
   </organization>
 
   <scm>
-    <connection>scm:github:https://github.com/cdimascio/dotenv-java</connection>
-    <developerConnection>scm:github:https://github.com/cdimascio/dotenv-java</developerConnection>
+    <connection>scm:github:https://github.com/mihkels/dotenv-java</connection>
+    <developerConnection>scm:github:https://github.com/mihkels/dotenv-java</developerConnection>
     <tag>master</tag>
-    <url>https://github.com/cdimascio/dotenv-java</url>
+    <url>https://github.com/mihkels/dotenv-java</url>
   </scm>
 
   <developers>
     <developer>
-      <id>cdimascio</id>
-      <name>Carmine DiMascio</name>
-      <email>cdimascio@gmail.com</email>
-      <url>https://www.github.com/cdimascio</url>
-      <organization>Carmine DiMascio OSS</organization>
-      <organizationUrl>https://www.github.com/cdimascio</organizationUrl>
+      <id>mihkels</id>
+      <name>Mihkel Selgal</name>
+      <url>https://www.github.com/mihkels</url>
+      <organization>Mihkel Selgal OSS</organization>
+      <organizationUrl>https://www.github.com/mihkels</organizationUrl>
       <roles>
         <role>developer</role>
       </roles>
@@ -49,10 +48,9 @@
     </developer>
   </developers>
 
-
   <properties>
-    <main.class>io.github.cdimascio.dotenv.Dotenv</main.class>
-    <module.name>io.github.cdimascio.dotenv.java</module.name>
+    <main.class>io.github.mihkels.dotenv.Dotenv</main.class>
+    <module.name>io.github.mihkels.dotenv.java</module.name>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <maven.compiler.release>11</maven.compiler.release>
@@ -70,7 +68,7 @@
     <maven.copy.rename.plugin>1.0.1</maven.copy.rename.plugin>
     <maven.moditect.plugin>1.0.0.RC3</maven.moditect.plugin>
 
-    <bintray.subject>cdimascio</bintray.subject>
+    <bintray.subject>mihkels</bintray.subject>
     <bintray.repo>maven</bintray.repo>
     <bintray.package>dotenv-java</bintray.package>
   </properties>
@@ -101,7 +99,6 @@
   <build>
     <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
     <plugins>
-
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
@@ -153,7 +150,7 @@
                 <moduleInfo>
                   <name>${module.name}</name>
                   <exports>
-                    !io.github.cdimascio.dotenv.internal*;
+                    !io.github.mihkels.dotenv.internal*;
                     *;
                   </exports>
                 </moduleInfo>
@@ -174,10 +171,10 @@
             <id>create-javadoc-dir</id>
             <phase>compile</phase>
             <configuration>
-              <tasks>
+              <target>
                 <delete dir="${javadoc.dir}"/>
                 <mkdir dir="${javadoc.dir}"/>
-              </tasks>
+              </target>
             </configuration>
             <goals>
               <goal>run</goal>
@@ -268,21 +265,6 @@
               </fileSets>
             </configuration>
           </execution>
-          <!--          <execution>-->
-          <!--            <id>rename-dir</id>-->
-          <!--            <phase>install</phase>-->
-          <!--            <goals>-->
-          <!--              <goal>rename</goal>-->
-          <!--            </goals>-->
-          <!--            <configuration>-->
-          <!--              <fileSets>-->
-          <!--                <fileSet>-->
-          <!--                  <sourceFile>${project.build.directory}/apidocs/</sourceFile>-->
-          <!--                  <destinationFile>${project.basedir}/docs/javadoc/</destinationFile>-->
-          <!--                </fileSet>-->
-          <!--              </fileSets>-->
-          <!--            </configuration>-->
-          <!--          </execution>-->
         </executions>
       </plugin>
       <plugin>
@@ -308,11 +290,6 @@
       <id>ossrh</id>
       <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
-    <!--    <repository>-->
-    <!--          <id>github</id>-->
-    <!--          <name>Carmine M DiMascio</name>-->
-    <!--          <url>https://maven.pkg.github.com/cdimascio/dotenv-java</url>-->
-    <!--        </repository>-->
   </distributionManagement>
   <profiles>
     <profile>

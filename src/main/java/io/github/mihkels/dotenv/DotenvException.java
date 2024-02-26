@@ -1,4 +1,4 @@
-package io.github.cdimascio.dotenv;
+package io.github.mihkels.dotenv;
 
 /**
  * Signals that dotenv exception of some sort has occurred.

@@ -1,4 +1,4 @@
-package io.github.cdimascio.dotenv;
+package io.github.mihkels.dotenv;
 
 /**
  * A key value pair representing an environment variable and its value

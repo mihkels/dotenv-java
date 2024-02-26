@@ -1,6 +1,6 @@
-package io.github.cdimascio.dotenv.internal;
+package io.github.mihkels.dotenv.internal;
 
-import io.github.cdimascio.dotenv.DotenvException;
+import io.github.mihkels.dotenv.DotenvException;
 
 import java.io.IOException;
 import java.net.URI;

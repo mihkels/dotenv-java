@@ -1,6 +1,6 @@
-package io.github.cdimascio.dotenv.internal;
+package io.github.mihkels.dotenv.internal;
 
-import io.github.cdimascio.dotenv.DotenvException;
+import io.github.mihkels.dotenv.DotenvException;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;

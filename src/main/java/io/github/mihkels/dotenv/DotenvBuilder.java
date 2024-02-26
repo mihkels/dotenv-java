@@ -1,7 +1,7 @@
-package io.github.cdimascio.dotenv;
+package io.github.mihkels.dotenv;
 
-import io.github.cdimascio.dotenv.internal.DotenvParser;
-import io.github.cdimascio.dotenv.internal.DotenvReader;
+import io.github.mihkels.dotenv.internal.DotenvParser;
+import io.github.mihkels.dotenv.internal.DotenvReader;
 
 import java.util.*;
 

@@ -1,7 +1,7 @@
 package tests;
 
-import io.github.cdimascio.dotenv.Dotenv;
-import io.github.cdimascio.dotenv.DotenvException;
+import io.github.mihkels.dotenv.Dotenv;
+import io.github.mihkels.dotenv.DotenvException;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;

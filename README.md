@@ -1,7 +1,5 @@
 # 🗝️ dotenv-java 
 
-![Build Status](https://github.com/cloudsimplus/cloudsimplus/actions/workflows/build.yml/badge.svg) [![Maven Central](https://img.shields.io/maven-central/v/io.github.cdimascio/dotenv-java.svg?label=Maven%20Central)](https://search.maven.org/artifact/io.github.cdimascio/dotenv-java) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/66b8195f0da544f1ad9ed1352c0ea66f)](https://app.codacy.com/app/cdimascio/dotenv-java?utm_source=github.com&utm_medium=referral&utm_content=cdimascio/dotenv-java&utm_campaign=Badge_Grade_Dashboard) [![](https://img.shields.io/gitter/room/cdimascio-oss/community?color=%23eb205a)](https://gitter.im/cdimascio-oss/community) [![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-) [![](https://img.shields.io/badge/doc-javadoc-blue)](https://cdimascio.github.io/dotenv-java/docs/javadoc/index.html) ![](https://img.shields.io/badge/license-Apache%202.0-blue.svg)
-
 A no-dependency, pure Java port of the Ruby dotenv project. Load environment variables from a `.env` file.
 
 <p align="center">
@@ -269,30 +267,3 @@ see [CONTRIBUTING.md](CONTRIBUTING.md)
 see [LICENSE](LICENSE) ([Apache 2.0](LICENSE))
 
 <a href="https://www.buymeacoffee.com/m97tA5c" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tbody>
-    <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Mooninaut"><img src="https://avatars.githubusercontent.com/u/1463364?v=4?s=100" width="100px;" alt="Clement Cherlin"/><br /><sub><b>Clement Cherlin</b></sub></a><br /><a href="https://github.com/cdimascio/dotenv-java/commits?author=Mooninaut" title="Code">💻</a> <a href="https://github.com/cdimascio/dotenv-java/commits?author=Mooninaut" title="Tests">⚠️</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/alexbraga"><img src="https://avatars.githubusercontent.com/u/61568124?v=4?s=100" width="100px;" alt="Alex Braga"/><br /><sub><b>Alex Braga</b></sub></a><br /><a href="https://github.com/cdimascio/dotenv-java/commits?author=alexbraga" title="Documentation">📖</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/c00ler"><img src="https://avatars.githubusercontent.com/u/1210272?v=4?s=100" width="100px;" alt="Alexey Venderov"/><br /><sub><b>Alexey Venderov</b></sub></a><br /><a href="https://github.com/cdimascio/dotenv-java/commits?author=c00ler" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/yassenb"><img src="https://avatars.githubusercontent.com/u/531223?v=4?s=100" width="100px;" alt="yassenb"/><br /><sub><b>yassenb</b></sub></a><br /><a href="https://github.com/cdimascio/dotenv-java/commits?author=yassenb" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://sidney.beekhoven.nl"><img src="https://avatars.githubusercontent.com/u/903673?v=4?s=100" width="100px;" alt="Sidney Beekhoven"/><br /><sub><b>Sidney Beekhoven</b></sub></a><br /><a href="https://github.com/cdimascio/dotenv-java/commits?author=dizney" title="Code">💻</a> <a href="https://github.com/cdimascio/dotenv-java/commits?author=dizney" title="Documentation">📖</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://youtube.com/@manoelcamposdev"><img src="https://avatars.githubusercontent.com/u/261605?v=4?s=100" width="100px;" alt="Manoel Campos"/><br /><sub><b>Manoel Campos</b></sub></a><br /><a href="https://github.com/cdimascio/dotenv-java/commits?author=manoelcampos" title="Code">💻</a> <a href="https://github.com/cdimascio/dotenv-java/commits?author=manoelcampos" title="Tests">⚠️</a> <a href="#infra-manoelcampos" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
