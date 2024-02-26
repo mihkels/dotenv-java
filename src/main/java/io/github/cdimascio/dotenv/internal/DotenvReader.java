@@ -35,12 +35,20 @@ public class DotenvReader {
      * @throws IOException if an I/O error occurs
      */
     public List<String> read() throws DotenvException, IOException {
+        String workingDir = System.getProperty("user.dir");
+        String workingLocation = workingDir + "/" + filename;
+        Path workingPath = Paths.get(workingLocation);
+        if (Files.exists(workingPath)) {
+            return Files.readAllLines(workingPath);
+        }
+
         String dir = directory
-            .replaceAll("\\\\", "/")
+            .replace("\\\\", "/")
             .replaceFirst("\\.env$", "")
             .replaceFirst("/$", "");
 
         String location = dir + "/" + filename;
+
         String lowerLocation = location.toLowerCase();
         Path path = (
             lowerLocation.startsWith("file:")
