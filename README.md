@@ -30,9 +30,9 @@ _Still using Java 8? Use version 2.3.2_
 ### Maven
 ```xml
 <dependency>
-    <groupId>io.github.cdimascio</groupId>
+    <groupId>io.github.mihkelsk</groupId>
     <artifactId>dotenv-java</artifactId>
-    <version>3.0.0</version>
+    <version>3.1.1</version>
 </dependency>
 ```
 
