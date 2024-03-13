@@ -1,19 +1,19 @@
 # 🗝️ dotenv-java 
 
-A no-dependency, pure Java port of the Ruby dotenv project. Load environment variables from a `.env` file.
+A no-dependency, pure Java port of the Ruby dotenv project. Load environment variables from a `.env` file. 
+Also works with GraalVM native images and the `.env` file does not need to be inside the resources directory. 
 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/cdimascio/dotenv-java/master/assets/dotenv-java-logo.png" alt="dotenv" width="550"/> 
 </p>
 
-_dotenv-java also powers the popular [dotenv-kotlin](https://github.com/cdimascio/dotenv-kotlin) library._
-
 Why dotenv?
 
->Storing configuration in the environment is one of the tenets of a [twelve-factor](http://12factor.net/config) app. Anything that is likely to change between deployment environments–such as resource handles for databases or credentials for external services–should be extracted from the code into environment variables.
-
->But it is not always practical to set environment variables on development machines or continuous integration servers where multiple projects are run. Dotenv load variables from a .env file into ENV when the environment is bootstrapped.
-
+>Storing configuration in the environment is one of the tenets of a [twelve-factor](http://12factor.net/config) app. 
+>Anything that is likely to change between deployment environments–such as resource handles for databases or credentials 
+>for external services–should be extracted from the code into environment variables.
+>But it is not always practical to set environment variables on development machines or continuous integration 
+>servers where multiple projects are run. Dotenv load variables from a .env file into ENV when the environment is bootstrapped.
 >-- [Brandon Keepers](https://github.com/bkeepers/dotenv)
 
 
@@ -24,13 +24,12 @@ Use `dotenv.get("...")` instead of Java's `System.getenv(...)`.
 ## Install
 
 _Requires Java 11 or greater._
-
 _Still using Java 8? Use version 2.3.2_
 
 ### Maven
 ```xml
 <dependency>
-    <groupId>io.github.mihkelsk</groupId>
+    <groupId>io.github.mihkels</groupId>
     <artifactId>dotenv-java</artifactId>
     <version>3.1.1</version>
 </dependency>
@@ -39,27 +38,22 @@ _Still using Java 8? Use version 2.3.2_
 ### Gradle <4.10
 
 ```groovy
-compile 'io.github.cdimascio:dotenv-java:3.0.0'
+compile 'io.github.cdimascio:dotenv-java:3.1.1'
 ```
 
 ### Gradle >=4.10
 
 ```groovy
-implementation 'io.github.cdimascio:dotenv-java:3.0.0'
+implementation 'io.github.cdimascio:dotenv-java:3.1.1'
 ```
-
-### Gradle Kotlin DSL
-
-```kotlin
-implementation("io.github.cdimascio:dotenv-java:3.0.0")
-```
-
-Looking for the Kotlin variant? **get [dotenv-kotlin](https://github.com/cdimascio/dotenv-kotlin)**.
 
 ## Usage
-Use `dotenv.get("...")` instead of Java's `System.getenv(...)`. Here's [why](#faq).
 
-Create a `.env` file in the root of your project
+Use `dotenv.get("...")` instead of Java's `System.getenv(...)`. Here's [why](#faq).
+Create a `.env` file in the root of your project and add environment-specific variables on new lines in 
+the form of `NAME=VALUE`. 
+
+For example:
 
 ```dosini
 # formatted as key=value
@@ -67,41 +61,24 @@ MY_ENV_VAR1=some_value
 MY_EVV_VAR2=some_value #some value comment
 ```
 
-
 ```java
-Dotenv dotenv = Dotenv.load();
-dotenv.get("MY_ENV_VAR1")
-```
+package com.dotenv.app;
 
-## Android Usage
+import io.github.cdimascio.dotenv.Dotenv;
 
-- Create an assets folder
-- Add `env` *(no dot)* to the assets folder
-
-	<img src="assets/android-dotenv.png" width="350">
-
-- Configure dotenv to search `/assets` for a file with name `env`
-
-	```java
-    Dotenv dotenv = Dotenv.configure()
-       .directory("/assets")
-       .filename("env") // instead of '.env', use 'env'
-       .load();
-
-	dotenv.get("MY_ENV_VAR1");
-	```
-
-**Note:** The above configuration is required because dot files in `/assets` do not appear to resolve on Android. *(Seeking recommendations from the Android community on how `dotenv-java` configuration should work in order to provide the best experience for Android developers)*
-
-Alternatively, if you are using Provider `android.resource` you may specify
-
-```
- .directory("android.resource://com.example.dimascio.myapp/raw")
+class App {
+    public static void main(String[] args) {
+        Dotenv dotenv = Dotenv.load();
+        String token = dotenv.get("DEMO_TOKEN");
+        System.out.println(token);
+    }
+}
 ```
 
 ## Advanced Usage
 
 ### Configure
+
 Configure `dotenv-java` once in your application. 
 
 ```java
@@ -134,7 +111,8 @@ for (DotenvEntry e : dotenv.entries()) {
 
 ## Configuration options
 
-### *optional* `directory` 
+### *optional* `directory`
+
 * `path` specifies the directory containing `.env`. Dotenv first searches for `.env` using the given path on the filesystem. If not found, it searches the given path on the classpath. If `directory` is not specified it defaults to searching the current working directory on the filesystem. If not found, it searches the current directory on the classpath.
 
 	**example**
@@ -204,7 +182,6 @@ for (DotenvEntry e : dotenv.entries()) {
 
 ## Powered by dotenv-java
 - [spring-dotenv](https://github.com/paulschwarz/spring-dotenv) - dotenv-java as a Spring PropertySource
-- [dotenv-kotlin](https://github.com/cdimascio/dotenv-kotlin) - a Kotlin DSL for dotenv-java
 
 ## [Javadoc](https://cdimascio.github.io/dotenv-java/docs/javadoc/)
 
@@ -229,7 +206,8 @@ Using dotenv in production would be cheating. This type of usage, however is an 
 example
 ```java
 Dotenv dotenv = Dotenv.configure().load();
-dotenv.entries().forEach(e -> System.setProperty(e.getKey(), e.getValue()));
+dotenv.entries()
+    .forEach(e -> System.setProperty(e.getKey(), e.getValue()));
 System.getProperty("MY_VAR");
 ```
 
@@ -265,5 +243,3 @@ see [CONTRIBUTING.md](CONTRIBUTING.md)
 ## License
 
 see [LICENSE](LICENSE) ([Apache 2.0](LICENSE))
-
-<a href="https://www.buymeacoffee.com/m97tA5c" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
